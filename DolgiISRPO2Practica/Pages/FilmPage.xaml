@@ -1,0 +1,37 @@
+﻿<Page x:Class="DolgiISRPO2Practica.Pages.FilmPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DolgiISRPO2Practica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      Title="FilmPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Фильмы" TextAlignment="Center" FontSize="25" Grid.ColumnSpan="2" Grid.Row="0"/>
+        <DataGrid x:Name="DGFilm" Background="White" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,80" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="DatePokaza" Binding="{Binding DatePokaza}"/>
+                <DataGridTextColumn Header="PuskinCard" Binding="{Binding PuskinCard1.Name}"/>
+                <DataGridTextColumn Header="Janor" Binding="{Binding Janor.Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+            <Button x:Name="BRedaction" Content="Редактировать" Click="BRedaction_Click"/>
+            <Button x:Name="BDeleted" Content="Удалить" Click="BDeleted_Click"/>
+            <Button x:Name="BAdd" Content="Добавить" Click="BAdd_Click"/>
+            <Button x:Name="TBBack" Content="Назад" Click="TBBack_Click"/>
+        </StackPanel>
+       
+    </Grid>
+</Page>
